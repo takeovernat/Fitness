@@ -20,11 +20,11 @@ const styles = StyleSheet.create({
         margin: 10
     },
     textInput: {
-        borderRadius: 5,
-        borderWidth: 1,
-        borderColor: 'grey',
-        marginTop: 4,
-        padding: 2,
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: 'white',
+        marginTop: 10,
+        padding: 18,
         width: '100%'
     },
     textInputContainer: {
@@ -32,7 +32,26 @@ const styles = StyleSheet.create({
     },
     txtHello: {
         fontSize: 30
-    }
+    },
+    box:{
+      width: 300,
+      height: 150,
+      marginTop:10 ,
+      backgroundColor: '#3385ff',
+      width: '105%'
+    },
+    button: {
+        borderRadius: 10,
+        borderWidth: 2,
+        borderColor: '#3385ff',
+        marginTop: 20,
+        padding: 7,
+        width: '37%',
+        justifyContent: 'center',
+        alignSelf: 'center'
+
+    },
+
 });
 
 const LoginScreen: React.FunctionComponent<LoginScreenProps> = (props) => {
@@ -41,7 +60,9 @@ const LoginScreen: React.FunctionComponent<LoginScreenProps> = (props) => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.txtHello}>Hello</Text>
+            <Text style={styles.txtHello}>Log in</Text>
+            <View style={styles.box}>
+
             <View style={styles.textInputContainer}>
                 <TextInput
                     value={username}
@@ -50,6 +71,12 @@ const LoginScreen: React.FunctionComponent<LoginScreenProps> = (props) => {
                     onChangeText={(text) => setUsername(text)}
                 />
                 <TextInput placeholder="password" secureTextEntry={true} style={styles.textInput} />
+            </View>
+            <View style={styles.button}>
+            <Button
+            title='log in'
+            />
+            </View>
             </View>
             <View style={styles.btnSignupContainer}>
                 <Text>Or</Text>

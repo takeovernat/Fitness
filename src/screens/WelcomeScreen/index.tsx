@@ -27,7 +27,14 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         flex: 1,
         width: '100%'
+    },
+    box:{
+      width: 300,
+      height: 200,
+      marginTop:100 ,
+      backgroundColor: 'purple',
     }
+
 });
 
 const WelcomeScreen: React.FunctionComponent<WelcomeScreenProps> = (props) => {
