@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, Text, TextInput, Button, View } from 'react-n
 import { AppScreens, AuthStackParamList } from '../../../navigators/AuthFlowNavigator';
 import { StackNavigationProp } from '@react-navigation/stack';
 
+
 type LoginScreenNavigationProps = StackNavigationProp<AuthStackParamList, AppScreens.Login>;
 
 interface LoginScreenProps {
@@ -37,16 +38,16 @@ const styles = StyleSheet.create({
       width: 300,
       height: 150,
       marginTop:10 ,
-      backgroundColor: '#3385ff',
+      backgroundColor: 'white',
       width: '105%'
     },
     button: {
         borderRadius: 10,
         borderWidth: 2,
-        borderColor: '#3385ff',
+        borderColor: '#3385',
         marginTop: 20,
-        padding: 7,
-        width: '37%',
+        padding: 5,
+        width: '30%',
         justifyContent: 'center',
         alignSelf: 'center'
 
@@ -57,10 +58,12 @@ const styles = StyleSheet.create({
 const LoginScreen: React.FunctionComponent<LoginScreenProps> = (props) => {
     const { navigation } = props;
     const [username, setUsername] = useState<string>('');
+    const [pass, setpass] = useState<string>('');
+    logged = false;
 
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.txtHello}>Log in</Text>
+            <Text style={styles.txtHello}>Login</Text>
             <View style={styles.box}>
 
             <View style={styles.textInputContainer}>
@@ -74,7 +77,13 @@ const LoginScreen: React.FunctionComponent<LoginScreenProps> = (props) => {
             </View>
             <View style={styles.button}>
             <Button
-            title='log in'
+            title='Login'
+            onPress={() =>{
+              if(logged === false){alert("invalid log-in");}
+              else{alert("you good!");
+              navigation.navigate(AppScreens.Home)
+            }
+          }}
             />
             </View>
             </View>
