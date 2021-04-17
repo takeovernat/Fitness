@@ -4,8 +4,10 @@ import AuthFlowNavigator from './src/navigators/AuthFlowNavigator';
 
 export default function App() {
     return (
+        
         <NavigationContainer>
             <AuthFlowNavigator />
         </NavigationContainer>
+        
     );
 }
